@@ -10,4 +10,7 @@
 #
 
 class Forum < ActiveRecord::Base
+  validates :title,       :presence => true
+  validates :category_id, :presence => true
+  validates_uniqueness_of :title, :scope => :category_id
 end

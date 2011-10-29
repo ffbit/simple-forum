@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :forum do
-    title "MyString"
-    category_id 1
+    title       { Factory.next :title }
+    association :category
   end
 end
