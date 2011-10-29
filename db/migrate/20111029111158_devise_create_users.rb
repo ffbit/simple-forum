@@ -4,12 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.database_authenticatable :null => false
       t.recoverable
       t.rememberable
-      t.trackable
-
-      # t.encryptable
-      # t.confirmable
-      # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
-      # t.token_authenticatable
+      t.encryptable
+      t.lockable :lock_strategy => :none, :unlock_strategy => :none
 
       t.boolean :admin
 
