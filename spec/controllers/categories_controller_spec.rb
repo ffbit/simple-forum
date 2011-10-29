@@ -24,7 +24,7 @@ require 'spec_helper'
 #  # Category. As you add validations to Category, be sure to
 #  # update the return value of this method accordingly.
 #  def valid_attributes
-#    { :title => "Some title"}
+#    Factory.attributes_for(:title)
 #  end
 
 #  describe "GET index" do
