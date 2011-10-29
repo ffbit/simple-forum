@@ -1,0 +1,10 @@
+== A Simple Forum
+
+It is just playing around with Ruby on Rails.
+
+=== It consists of
+* categories;
+* forums;
+* users (regular and administrative);
+* posts;
+
