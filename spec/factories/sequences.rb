@@ -9,4 +9,8 @@ FactoryGirl.define do
   sequence :title do
     Faker::Lorem.sentence
   end
+  
+  sequence :content do
+    Faker::Lorem.paragraphs
+  end
 end
