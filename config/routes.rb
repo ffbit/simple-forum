@@ -1,4 +1,6 @@
 SimpleForum::Application.routes.draw do
+  resources :forums
+
   resources :categories
 
   devise_for :users
