@@ -25,6 +25,8 @@ describe Forum do
   end
   
   describe "category association" do
+    it { should respond_to :category_id }
+    it { should validate_presence_of :category_id }
     it { should belong_to :category }
   end
 end
