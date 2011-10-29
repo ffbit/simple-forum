@@ -49,4 +49,8 @@ describe User do
     
     it { user.should be_admin }
   end
+  
+  describe "posts association" do
+    it { should have_many :posts }
+  end
 end
