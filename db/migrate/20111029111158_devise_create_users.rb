@@ -3,7 +3,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
       t.database_authenticatable :null => false
       t.recoverable
-      t.rememberable
       t.encryptable
       t.lockable :lock_strategy => :none, :unlock_strategy => :none
 
