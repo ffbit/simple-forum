@@ -10,7 +10,8 @@
 #
 
 class Forum < ActiveRecord::Base
-  has_many :posts
+  has_many   :posts
+  belongs_to :category
   
   validates :title,       :presence => true
   validates :category_id, :presence => true
