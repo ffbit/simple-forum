@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :post do
-    forum_id 1
-    user_id 1
-    content "MyText"
+    association :forum
+    association :user
+    content     { Factory.next :content }
   end
 end
