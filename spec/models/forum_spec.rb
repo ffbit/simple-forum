@@ -19,4 +19,8 @@ describe Forum do
     it { should validate_presence_of :title }
     it { should validate_uniqueness_of :category_id }
   end
+  
+  describe "posts method" do
+    it { should have_many :posts }
+  end
 end
