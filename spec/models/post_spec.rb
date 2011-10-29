@@ -20,13 +20,13 @@ describe Post do
     it { should validate_presence_of :content }
   end
   
-  describe "forum attribute" do
+  describe "forum association" do
     it { should respond_to :forum_id }
     it { should validate_presence_of :forum_id }
-    it { should respond_to :forum }
+    it { should belong_to :forum }
   end
   
-  describe "user attribute" do
+  describe "user association" do
     it { should respond_to :user_id }
     it { should validate_presence_of :user_id }
     it { should belong_to :user }
