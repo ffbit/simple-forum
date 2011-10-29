@@ -19,4 +19,9 @@ describe Category do
 #    it { category.should validate_length_of(:password, :within => 0..255) }
     it { should validate_uniqueness_of :title }
   end
+  
+  describe "forums association" do
+    it { should have_many :forums }
+  end
+  
 end
