@@ -41,5 +41,7 @@ group :test, :development do
   gem "spork", "0.9.0.rc8"
   gem "factory_girl_rails", "~> 1.3.0"
   gem "faker", "~> 1.0.1"
+  gem "shoulda-matchers", "~> 1.0.0.beta3"
+  gem "rspec-on-rails-matchers", "~> 1.0.0"
 end
 
