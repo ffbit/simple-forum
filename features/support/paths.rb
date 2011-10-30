@@ -3,6 +3,9 @@ def path_to(page)
   
   when /the sign up page/
     signup_path
+    
+  when /the sing in page/
+    signin_path
   
   # Add more page => path mappings here
   
