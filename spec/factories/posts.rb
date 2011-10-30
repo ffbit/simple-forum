@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :post do
-    association :forum
+    association :topic
     association :user
     content     { Factory.next :content }
   end

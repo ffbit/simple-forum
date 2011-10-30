@@ -24,4 +24,8 @@ describe Topic do
     it { should validate_presence_of :forum_id }
     it { should belong_to :forum }
   end
+  
+  describe "posts association" do
+    it { should have_many :posts }
+  end
 end

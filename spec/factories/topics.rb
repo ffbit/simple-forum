@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :topic do
-    string ""
-    forum_id 1
+    title        { Factory.next :title }
+    association :forum
   end
 end
