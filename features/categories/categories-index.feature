@@ -9,4 +9,3 @@ Feature: Categories index
     When I visit the home page
     Then I should see "People" category
     And I should see "Sport" category
-    
