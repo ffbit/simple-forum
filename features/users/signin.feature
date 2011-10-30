@@ -5,7 +5,8 @@ Feature: Sign in
   I want to be able to sign up with my details
   
   Background: Sign out and visit the sign in path
-    Given I'm on the sing in page
+    Given I'm on the sign out page
+    And I'm on the sign in page
     And I've got a user
   
   Scenario: Successful Sing in

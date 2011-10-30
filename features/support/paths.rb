@@ -4,8 +4,11 @@ def path_to(page)
   when /the sign up page/
     signup_path
     
-  when /the sing in page/
+  when /the sign in page/
     signin_path
+  
+  when /the sign out page/
+    signout_path
   
   # Add more page => path mappings here
   

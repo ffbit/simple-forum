@@ -13,6 +13,9 @@ SimpleForum::Application.routes.draw do
     
     # sign up
     get 'signin' => 'devise/sessions#new', :as => :signin
+    
+    #sing out
+    get 'signout' => 'devise/sessions#destroy', :as => :signout
   end
   
   devise_scope :user do 
