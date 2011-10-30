@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030091324) do
+ActiveRecord::Schema.define(:version => 20111030093957) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20111030091324) do
   end
 
   create_table "posts", :force => true do |t|
-    t.integer  "forum_id",   :null => false
     t.integer  "user_id",    :null => false
     t.text     "content",    :null => false
     t.datetime "created_at"
