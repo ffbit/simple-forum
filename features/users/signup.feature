@@ -4,12 +4,24 @@ Feature: Sign up
   As a user
   I want to be able to sign up with my details
   
-  Scenario: Sign up with valid details
+  Background: Visit the sign up page
     Given I'm on the sign up page
+  
+  Scenario: Successful Sign up with valid details
     When I fill in a "email" field with "good@email.com"
     And I fill in a "password" field with "secret"
     And I fill in a "password confirmation" field with "secret"
     And I click a "Sign up" button
     Then I should see "You have signed up successfully."
     
+  Scenario: Unsuccessful Sign up without an email address
+    When I submit the sing up form without "email"
+    Then I should see "Email can't be blank"
   
+  Scenario: Unsuccessful Sign up without a password
+    When I submit the sing up form without "password"
+    Then I should see "Password can't be blank"
+    
+  Scenario: Unsuccessful Sign up without a password confirmation
+    When I submit the sing up form without "password confirmation"
+    Then I should see "Password doesn't match confirmation"
