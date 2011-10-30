@@ -10,4 +10,7 @@
 #
 
 class Topic < ActiveRecord::Base
+  belongs_to :forum
+  validates  :title,    :presence => true
+  validates  :forum_id, :presence => true
 end
