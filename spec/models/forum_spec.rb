@@ -20,8 +20,8 @@ describe Forum do
     it { should validate_uniqueness_of :category_id }
   end
   
-  describe "posts association" do
-    it { should have_many :posts }
+  describe "topics association" do
+    it { should have_many :topics }
   end
   
   describe "category association" do

@@ -10,7 +10,7 @@
 #
 
 class Forum < ActiveRecord::Base
-  has_many   :posts
+  has_many   :topics
   belongs_to :category
   
   validates :title,       :presence => true
