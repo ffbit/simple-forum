@@ -1,6 +1,9 @@
 def path_to(page)
   case page
   
+  when /the home page/
+    root_path
+  
   when /the sign up page/
     signup_path
     
