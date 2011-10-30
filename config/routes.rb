@@ -10,6 +10,9 @@ SimpleForum::Application.routes.draw do
   devise_for :users do
     # registrations
     get 'signup' => 'devise/registrations#new', :as => :signup
+    
+    # sign up
+    get 'signin' => 'devise/sessions#new', :as => :signin
   end
   
   devise_scope :user do 
