@@ -3,8 +3,9 @@
 It is just for playing around with Ruby on Rails.
 
 === It consists of
+* users (regular and administrative);
 * categories;
 * forums;
-* users (regular and administrative);
+* topics;
 * posts.
 
