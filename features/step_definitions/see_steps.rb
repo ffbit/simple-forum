@@ -9,3 +9,17 @@ end
 Then /^I should not see "([^"]*)" link$/ do |locator|
   page.should have_no_link(locator)
 end
+
+Then /^I should see "([^"]*)" "([^"]*)" link$/ do |text, parent|
+  find(".#{parent} a", :text => text).should be_visible
+end
+
+Then /^I should see "([^"]*)" "([^"]*)"$/ do |text, container|
+  find(".#{container}", :text => text).should be_visible
+end
+
+Then /^I should not see "([^"]*)" "([^"]*)" link$/ do |text, container|
+  all(".#{container}").each do |parent|
+    parent.should have_no_link(text)
+  end
+end

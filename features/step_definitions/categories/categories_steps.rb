@@ -11,18 +11,6 @@ Given /^I've got (\d+) category$/ do |count|
   end
 end
 
-Then /^I should see "([^"]*)" category$/ do |text|
-  find('.category', :text => text).should be_visible
-end
-
-Then /^I should see "([^"]*)" category link$/ do |text|
-  find('.category a', :text => text).should be_visible
-end
-
-Then /^I should not see "([^"]*)" category link$/ do |text|
-  page.should have_no_link(text, :class => 'category')
-end
-
 Then /^I should have (\d+) categor[yies]{1,3}$/ do |count|
   Category.count.should == count.to_i
 end

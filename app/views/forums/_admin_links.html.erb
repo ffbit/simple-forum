@@ -1,0 +1,8 @@
+<% if user_admin? %>
+  <div>
+    <%= link_to "Edit", edit_forum_path(forum) %>
+  </div>
+  <div>
+    <%= link_to "Delete", forum, method: :delete, confirm: 'Are you sure?' %>
+  </div>
+<% end %>

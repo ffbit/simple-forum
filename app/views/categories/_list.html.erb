@@ -1,0 +1,8 @@
+<% @categories.each do |category| %>
+  <div class="category">
+    <div><%= category.title %></div>
+    <% locals = { :category => category } %>
+    <%= render :partial => 'admin_links', :locals => locals %>
+  </div>
+  <%= render :partial => 'forums/list', :locals => locals %>
+<% end %>

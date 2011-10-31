@@ -1,0 +1,12 @@
+<% if category.forums.any? %>
+  <% category.forums.each do |forum| %>
+  <div class="forums">
+    <div class="forum">
+      <%= link_to forum.title, forum %>
+      <%= render :partial => 'forums/admin_links', :locals => { :forum => forum } %>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+
+<%= render :partial => 'forums/bottom_admin_links', :locals => { :category => category } %>
