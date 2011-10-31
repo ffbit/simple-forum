@@ -4,7 +4,7 @@ module SessionsHelper
     user_signed_in? and current_user.admin?
   end
   
-  def authorizate_admin!
+  def authorize!
     authenticate_user!
     
     if not user_admin?
