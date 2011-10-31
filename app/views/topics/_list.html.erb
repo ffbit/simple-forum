@@ -1,0 +1,10 @@
+<% if @topics.any? %>
+  <div class="topics">
+    <% @topics.each do |topic| %>
+      <div class="topic">
+        <%= link_to topic.title, topic %>
+      </div>
+    <% end %>
+  </div>
+  <%= render 'topics/user_links' %>
+<% end %>

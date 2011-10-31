@@ -3,10 +3,11 @@ class ForumsController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
+    @topics = @forum.topics
   end
 
   def new
-    @forum = Forum.new :category_id => params[:category_id]
+    @forum = Forum.new category_id: params[:category_id]
   end
 
   def edit

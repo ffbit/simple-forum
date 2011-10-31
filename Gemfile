@@ -44,5 +44,6 @@ group :test, :development do
   gem "shoulda-matchers", "~> 1.0.0.beta3"
   gem "rspec-on-rails-matchers", "~> 1.0.0"
   gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+  gem "will_paginate", "~> 3.0.2"
 end
 

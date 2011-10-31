@@ -13,6 +13,9 @@ class Topic < ActiveRecord::Base
   belongs_to :forum
   has_many :posts
   
+  attr_accessor :content
+  
   validates  :title,    :presence => true
   validates  :forum_id, :presence => true
+  validates  :content, :presence => true
 end

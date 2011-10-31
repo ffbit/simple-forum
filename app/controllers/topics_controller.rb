@@ -21,15 +21,8 @@ class TopicsController < ApplicationController
     end
   end
 
-  # GET /topics/new
-  # GET /topics/new.json
   def new
-    @topic = Topic.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @topic }
-    end
+    @topic = Topic.new forum_id: params[:forum_id]
   end
 
   # GET /topics/1/edit
@@ -37,19 +30,16 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
   end
 
-  # POST /topics
-  # POST /topics.json
   def create
     @topic = Topic.new(params[:topic])
 
-    respond_to do |format|
-      if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render json: @topic, status: :created, location: @topic }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-      end
+    if @topic.save
+      # I want a transaction here.
+      @topic.posts.create(user: current_user, content: @topic.content)
+      
+      redirect_to @topic, notice: 'Topic was successfully created.'
+    else
+      render :new
     end
   end
 

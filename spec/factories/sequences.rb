@@ -11,6 +11,6 @@ FactoryGirl.define do
   end
   
   sequence :content do
-    Faker::Lorem.paragraphs
+    Faker::Lorem.paragraph
   end
 end
