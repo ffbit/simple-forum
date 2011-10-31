@@ -28,4 +28,8 @@ describe Topic do
   describe "posts association" do
     it { should have_many :posts }
   end
+  
+  describe "content attribute" do
+    it { should validate_presence_of :content }
+  end
 end
