@@ -1,29 +1,12 @@
 class CategoriesController < ApplicationController
+  before_filter :authorizate_admin!, :except => :index
   
   def index
     @categories = Category.all
   end
-
-  # GET /categories/1
-  # GET /categories/1.json
-  def show
-    @category = Category.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @category }
-    end
-  end
-
-  # GET /categories/new
-  # GET /categories/new.json
+  
   def new
     @category = Category.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @category }
-    end
   end
 
   # GET /categories/1/edit
@@ -31,19 +14,13 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
-  # POST /categories
-  # POST /categories.json
   def create
     @category = Category.new(params[:category])
-
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render json: @category, status: :created, location: @category }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    
+    if @category.save
+      redirect_to root_path, notice: 'Category was successfully created.'
+    else
+      render :new
     end
   end
 

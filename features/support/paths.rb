@@ -13,6 +13,9 @@ def path_to(page)
   when /the sign out page/
     signout_path
   
+  when /the new category page/
+    new_category_path
+  
   # Add more page => path mappings here
   
   else
