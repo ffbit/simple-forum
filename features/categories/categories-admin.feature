@@ -22,7 +22,7 @@ Feature: Manage Categories
     And I'm on the new category page
     When I fill in a "title" field with "Sport"
     And I click a "Create Category" button
-    Then I should have 2 category
+    Then I should have 2 categories
     And I should be redirected to the home page
     And I should see "Category was successfully created"
   
