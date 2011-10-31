@@ -50,3 +50,5 @@ Feature: Manage Categories
   Scenario: Clicking Delete Category Link
     When I click "Delete" category link
     Then I should have 0 category
+    And I should be redirected to the home page
+    And I should see "Category was successfully deleted."

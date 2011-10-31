@@ -29,15 +29,10 @@ class CategoriesController < ApplicationController
     redirect_to root_path, notice: 'Category was successfully updated.'
   end
 
-  # DELETE /categories/1
-  # DELETE /categories/1.json
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
 
-    respond_to do |format|
-      format.html { redirect_to categories_url }
-      format.json { head :ok }
-    end
+    redirect_to root_path, notice: 'Category was successfully deleted.'
   end
 end
