@@ -1,5 +1,5 @@
 @categories-user
-Feature: Manage Categories
+Feature: User can not Manage Categories
   In order to not manage categories
   As a user
   I want to be not able to manage ones
