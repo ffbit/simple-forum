@@ -10,3 +10,7 @@ When /^I click "([^"]*)" ([^ ]*) link$/ do |text, parent|
   e = find(".#{parent} a", :text => text)
   e.click
 end
+
+When /^I click "([^"]*)" link$/ do |locator|
+  click_link locator
+end
