@@ -17,3 +17,9 @@ end
 Then /^I should see "([^"]*)" "([^"]*)"$/ do |text, container|
   find(".#{container}", :text => text).should be_visible
 end
+
+Then /^I should not see "([^"]*)" "([^"]*)" link$/ do |text, container|
+  all(".#{container}").each do |parent|
+    parent.should have_no_link(text)
+  end
+end

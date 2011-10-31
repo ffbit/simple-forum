@@ -10,8 +10,8 @@ Feature: User can not Manage Categories
     And I'm on the home page
   
   Scenario: No Manage Category Links for a user
-    Then I should not see "Edit" category link
-    And I should not see "Delete" category link
+    Then I should not see "Edit" "category" link
+    And I should not see "Delete" "category" link
     And I should not see "New Category" link
   
   Scenario: Restriction for a user

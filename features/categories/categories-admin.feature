@@ -10,8 +10,8 @@ Feature: Manage Categories
     And I'm on the home page
     
   Scenario: Manage Category Links
-    Then I should see "Edit" category link
-    And I should see "Delete" category link
+    Then I should see "Edit" "category" link
+    And I should see "Delete" "category" link
     And I should see "New Category" link
   
   Scenario: New Category Link
@@ -34,7 +34,7 @@ Feature: Manage Categories
     Then I should see "Title has already been taken"
   
   Scenario: Edit an Existing Category Link
-    When I click "Edit" category link
+    When I click "Edit" "category" link
     Then I should be on the edit category page
   
   Scenario: Edit an Existing category
@@ -45,10 +45,10 @@ Feature: Manage Categories
     And I should see "Category was successfully updated."
   
   Scenario: Seeing Delete Category Link
-    Then I should see "Delete" category link
+    Then I should see "Delete" "category" link
   
   Scenario: Clicking Delete Category Link
-    When I click "Delete" category link
+    When I click "Delete" "category" link
     Then I should have 0 category
     And I should be redirected to the home page
     And I should see "Category was successfully deleted."
