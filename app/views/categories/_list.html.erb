@@ -1,7 +1,8 @@
 <% @categories.each do |category| %>
   <div class="category">
     <div><%= category.title %></div>
-    <%= render :partial => 'admin_links', :locals => { :category => category } %>
+    <% locals = { :category => category } %>
+    <%= render :partial => 'admin_links', :locals => locals %>
   </div>
-  <%= render :partial => 'forums/list', :locals => { :forums => category.forums } %>
+  <%= render :partial => 'forums/list', :locals => locals %>
 <% end %>

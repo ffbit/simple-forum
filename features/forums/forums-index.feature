@@ -4,8 +4,13 @@ Feature: Forums index
   As a visitor
   I want to be able to see them
   
-  Scenario: List of forums
-    Given I've got forums named "Java, Python"
+  Background: Existing forums
+    Given I've got forums named "Java"
     When I visit the home page
+  
+  Scenario: List of forums
     Then I should see "Java" "forum" link
-    And I should see "Python" "forum" link
+  
+  Scenario: Visiting a forum
+    When I click "Java" "forum" link
+    Then I should be on the forum page

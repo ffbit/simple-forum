@@ -15,5 +15,6 @@ class Forum < ActiveRecord::Base
   
   validates :title,       :presence => true
   validates :category_id, :presence => true
+  # Why it doesn't work?
   validates_uniqueness_of :title, :scope => :category_id
 end

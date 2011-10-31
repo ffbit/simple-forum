@@ -3,7 +3,7 @@ SimpleForum::Application.routes.draw do
 
   resources :posts
 
-  resources :forums
+  resources :forums, :except => :index
 
   resources :categories, :except => :show
 

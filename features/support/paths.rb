@@ -19,6 +19,15 @@ def path_to(page)
   when /the edit category page/
     edit_category_path(Category.first)
   
+  when /the new forum page/
+    new_forum_path
+    
+  when /the forum page/
+    forum_path(Forum.first)
+    
+  when /the edit forum page/
+    edit_forum_path(Forum.first)
+  
   # Add more page => path mappings here
   
   else
