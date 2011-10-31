@@ -23,3 +23,6 @@ Then /^I should not see "([^"]*)" category link$/ do |text|
   page.should have_no_link(text, :class => 'category')
 end
 
+Then /^I should have (\d+) category$/ do |count|
+  Category.count.should == count.to_i
+end

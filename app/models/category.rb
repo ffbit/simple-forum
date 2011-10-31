@@ -11,5 +11,6 @@
 class Category < ActiveRecord::Base
   has_many :forums
   
-  validates :title, :presence => true
+  validates :title, :presence   => true,
+                    :uniqueness => { :case_sensitive => false }
 end

@@ -5,7 +5,7 @@ SimpleForum::Application.routes.draw do
 
   resources :forums
 
-  resources :categories, :only => [:index, :edit, :destroy, :new]
+  resources :categories, :except => :show
 
   devise_for :users do
     # registrations
