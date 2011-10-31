@@ -9,7 +9,6 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  # GET /categories/1/edit
   def edit
     @category = Category.find(params[:id])
   end
@@ -23,21 +22,11 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
-
-  # PUT /categories/1
-  # PUT /categories/1.json
+  
   def update
     @category = Category.find(params[:id])
 
-    respond_to do |format|
-      if @category.update_attributes(params[:category])
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to root_path, notice: 'Category was successfully updated.'
   end
 
   # DELETE /categories/1

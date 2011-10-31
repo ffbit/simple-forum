@@ -16,6 +16,9 @@ def path_to(page)
   when /the new category page/
     new_category_path
   
+  when /the edit category page/
+    edit_category_path(Category.first)
+  
   # Add more page => path mappings here
   
   else
