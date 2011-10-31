@@ -1,0 +1,9 @@
+<% if forums.any? %>
+  <% forums.each do |forum| %>
+  <div class="forums">
+    <div class="forum">
+      <%= link_to forum.title, forum %>
+    </div>
+  </div>
+  <% end %>
+<% end %>

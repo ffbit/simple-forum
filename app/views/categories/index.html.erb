@@ -1,19 +1,5 @@
 <h1>Listing categories</h1>
 
-<% @categories.each do |category| %>
-  <div class="category">
-    <div><%= category.title %></div>
-    <% if user_signed_in? and current_user.admin? %>
-      <div>
-        <%= link_to 'Edit', edit_category_path(category) %>
-      </div>
-      <div>
-        <%= link_to 'Delete', category, confirm: 'Are you sure?', method: :delete %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<%= render 'list' %>
 
-<% if user_signed_in? and current_user.admin? %>
-  <div><%= link_to "New Category", new_category_path %></div>
-<% end %>
+<%= render 'bottom_admin_links' %>

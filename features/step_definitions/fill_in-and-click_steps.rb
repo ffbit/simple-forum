@@ -7,8 +7,7 @@ When /^I click [ anthe]{,4}"([^"]*)" button$/ do |locator|
 end
 
 When /^I click "([^"]*)" ([^ ]*) link$/ do |text, parent|
-  e = find(".#{parent} a", :text => text)
-  e.click
+  find(".#{parent} a", :text => text).click
 end
 
 When /^I click "([^"]*)" link$/ do |locator|
