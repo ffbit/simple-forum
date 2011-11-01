@@ -4,5 +4,13 @@ end
 
 Given /^I've got posts with content "([^"]*)"$/ do |content|
   topic = Topic.first
-  topic.posts.create!(content: content, user_id: topic.user_id)
+  Factory(:post, content: content , topic: topic, user_id: topic.user_id)
 end
+
+Given /^I've got (\d+) posts$/ do |count|
+  topic = Topic.first
+  count.to_i.times do
+    Factory(:post, topic: topic, user_id: topic.user_id)
+  end
+end
+

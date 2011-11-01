@@ -17,3 +17,8 @@ Feature: Topics
   
   Scenario: No New Post link
     Then I should not see "New Post" link
+  
+  Scenario: Pagination
+    Given I've got 12 posts
+    When I visit the topic page
+    Then I should see 10 "posts"

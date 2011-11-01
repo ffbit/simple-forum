@@ -18,7 +18,5 @@ class Post < ActiveRecord::Base
   validates :topic_id, :presence => true
   validates :user_id,  :presence => true
   
-  def per_page
-    10
-  end
+  self.per_page = 10
 end

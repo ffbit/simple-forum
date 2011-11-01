@@ -4,8 +4,7 @@ class TopicsController < ApplicationController
   
   def show
     @topic = Topic.find(params[:id])
-    # Pagination should be there.
-    @posts = @topic.posts
+    @posts = Post.paginate(:page => params[:page])
   end
 
   def new
