@@ -53,4 +53,8 @@ describe User do
   describe "posts association" do
     it { should have_many :posts }
   end
+  
+  describe "topics association" do
+    it { should have_many :topics }
+  end
 end
