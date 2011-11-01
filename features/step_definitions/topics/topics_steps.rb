@@ -16,3 +16,11 @@ When /^I submit the new topic form without "([^"]*)"$/ do |field|
   When %{I fill in a "#{field}" field with ""}
   When %{I click "Create Topic" button}
 end
+
+Given /^I've got (\d+) topic$/ do |count|
+  forum = Factory :forum
+  count.to_i.times do
+    Factory :topic, forum: forum
+  end
+end
+

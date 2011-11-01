@@ -1,8 +1,8 @@
 @topics-user
 Feature: Topic Creation by a User
-  In order to not ask a question
+  In order to ask a question
   As a user
-  I want to be not able to create a topic
+  I want to be able to create a topic
   
   Background: an Existing Topic and a User
     Given I've got forum named "Photo"

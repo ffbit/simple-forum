@@ -12,13 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :forum_id %><br />
-    <%= f.number_field :forum_id %>
+    <%= f.label :topic_id %><br />
+    <%= f.number_field :topic_id %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
+  <%= f.hidden_field :topic_id %>
   <div class="field">
     <%= f.label :content %><br />
     <%= f.text_area :content %>

@@ -23,3 +23,7 @@ Then /^I should not see "([^"]*)" "([^"]*)" link$/ do |text, container|
     parent.should have_no_link(text)
   end
 end
+
+Then /^I should see (\d+) "([^"]*)"$/ do |count, locator|
+  all(".#{locator.singularize}").count.should == count.to_i
+end
