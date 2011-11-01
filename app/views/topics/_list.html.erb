@@ -3,6 +3,7 @@
     <% @topics.each do |topic| %>
       <div class="topic">
         <%= link_to topic.title, topic %>
+        <%= render partial: 'topics/admin_links', locals: { topic: topic } %>
       </div>
     <% end %>
   </div>

@@ -14,3 +14,6 @@ Feature: Topics
   Scenario: Visiting a topic
     When I click "How to learn something from scratch?" "topic" link
     Then I should be on the topic page
+  
+  Scenario: No New Topic link
+    Then I should not see "New Topic" link

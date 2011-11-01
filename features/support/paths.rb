@@ -31,6 +31,9 @@ def path_to(page)
   when /the topic page/
     topic_path(Topic.first)
   
+  when /the edit topic page/
+    edit_topic_path(Topic.first)
+  
   # Add more page => path mappings here
   
   else
