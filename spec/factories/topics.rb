@@ -3,7 +3,8 @@
 FactoryGirl.define do
   factory :topic do
     title        { Factory.next :title }
-    association  :forum
     content      { Factory.next :content }
+    association  :forum
+    association  :user
   end
 end

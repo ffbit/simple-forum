@@ -7,6 +7,7 @@
 #  forum_id   :integer         not null
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer         default(0), not null
 #
 
 require 'spec_helper'
@@ -31,5 +32,11 @@ describe Topic do
   
   describe "content attribute" do
     it { should validate_presence_of :content }
+  end
+  
+  describe "user association" do
+    it { should respond_to :user_id }
+    it { should validate_presence_of :user_id }
+    it { should belong_to :user }
   end
 end
