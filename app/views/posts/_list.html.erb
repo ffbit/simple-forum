@@ -3,6 +3,7 @@
 <% @posts.each do |post| %>
   <div class="post">
     <div><%= post.content %></div>
+    <%= render partial: 'posts/admin_links', locals: { post: post } %>
   </div>
 <% end %>
 

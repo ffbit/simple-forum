@@ -19,32 +19,21 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
-  # PUT /posts/1
-  # PUT /posts/1.json
+  
   def update
     @post = Post.find(params[:id])
-
-    respond_to do |format|
-      if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    
+    if @post.update_attributes(params[:post])
+      redirect_to @post.topic, notice: 'Post was successfully updated.'
+    else
+      render :new
     end
   end
-
-  # DELETE /posts/1
-  # DELETE /posts/1.json
+  
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
 
-    respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :ok }
-    end
+    redirect_to @post.topic, notice: 'Post was successfully deleted.'
   end
 end

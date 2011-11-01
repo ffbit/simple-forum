@@ -22,3 +22,7 @@ Feature: Post Creation by a User
     When I submit the new post form without "content"
     Then I should see "Content can't be blank"
     And I should have 1 post
+  
+  Scenario: No Manage Posts Links for a user
+    Then I should not see "Edit" "post" link
+    And I should not see "Delete" "post" link
