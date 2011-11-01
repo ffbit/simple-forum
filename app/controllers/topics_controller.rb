@@ -1,6 +1,8 @@
 class TopicsController < ApplicationController
-  # GET /topics
-  # GET /topics.json
+  before_filter :authenticate_user!, except: :show
+  before_filter :authenticate_admin!, only: [:edit, :update, :delete]
+  
+  
   def index
     @topics = Topic.all
 
