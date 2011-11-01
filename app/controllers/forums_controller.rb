@@ -1,5 +1,5 @@
 class ForumsController < ApplicationController
-  before_filter :authorize!, :except => :show
+  before_filter :authenticate_admin!, :except => :show
 
   def show
     @forum = Forum.find(params[:id])

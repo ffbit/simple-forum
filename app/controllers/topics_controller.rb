@@ -1,31 +1,15 @@
 class TopicsController < ApplicationController
-  # GET /topics
-  # GET /topics.json
-  def index
-    @topics = Topic.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @topics }
-    end
-  end
-
-  # GET /topics/1
-  # GET /topics/1.json
+  before_filter :authenticate_user!, except: :show
+  before_filter :authenticate_admin!, only: [:edit, :update, :delete]
+  
   def show
     @topic = Topic.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @topic }
-    end
   end
 
   def new
     @topic = Topic.new forum_id: params[:forum_id]
   end
 
-  # GET /topics/1/edit
   def edit
     @topic = Topic.find(params[:id])
   end
@@ -42,32 +26,21 @@ class TopicsController < ApplicationController
       render :new
     end
   end
-
-  # PUT /topics/1
-  # PUT /topics/1.json
+  
   def update
     @topic = Topic.find(params[:id])
-
-    respond_to do |format|
-      if @topic.update_attributes(params[:topic])
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-      end
+    
+    if @topic.update_attributes(params[:topic])
+      redirect_to @topic, notice: 'Topic was successfully updated.'
+    else
+      render :edit
     end
   end
 
-  # DELETE /topics/1
-  # DELETE /topics/1.json
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
-
-    respond_to do |format|
-      format.html { redirect_to topics_url }
-      format.json { head :ok }
-    end
+    
+    redirect_to @topic.forum, notice: 'Topic was successfully deleted.'
   end
 end
