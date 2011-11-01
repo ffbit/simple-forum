@@ -14,3 +14,7 @@ Given /^I've got (\d+) posts$/ do |count|
   end
 end
 
+When /^I submit the new post form without "([^"]*)"$/ do |field|
+  When %{I fill in a "#{field}" field with ""}
+  When %{I click "Create Post" button}
+end
