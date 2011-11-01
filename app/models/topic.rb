@@ -21,4 +21,13 @@ class Topic < ActiveRecord::Base
   validates  :forum_id, :presence => true
   validates  :content,  :presence => true, :if => :new_record?
   validates  :user_id,  :presence => true
+  
+  default_scope :order => 'topics.updated_at DESC'
+  
+  before_save :create_post
+  
+  private
+    def create_post
+      self.posts.build(content: content, user: user)
+    end
 end

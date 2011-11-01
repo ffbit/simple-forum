@@ -21,6 +21,4 @@ class Post < ActiveRecord::Base
   def per_page
     10
   end
-  
-  default_scope :order => 'topics.updated_at DESC'
 end

@@ -4,6 +4,8 @@ class TopicsController < ApplicationController
   
   def show
     @topic = Topic.find(params[:id])
+    # Pagination should be there.
+    @posts = @topic.posts
   end
 
   def new
@@ -15,12 +17,9 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(params[:topic])
+    @topic = Topic.new(params[:topic].merge(user: current_user))
 
     if @topic.save
-      # I want a transaction here.
-      @topic.posts.create(user: current_user, content: @topic.content)
-      
       redirect_to @topic, notice: 'Topic was successfully created.'
     else
       render :new
