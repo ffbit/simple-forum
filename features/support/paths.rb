@@ -8,10 +8,10 @@ def path_to(page)
     new_user_registration_path
     
   when /the sign in page/
-    signin_path
+    new_user_session_path
   
   when /the sign out page/
-    signout_path
+    destroy_user_session_path
   
   when /the new category page/
     new_category_path
