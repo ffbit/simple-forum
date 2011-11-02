@@ -4,6 +4,7 @@ require 'rspec/autorun'
 require 'spork'
 require 'rspec_on_rails_matchers'
 require 'database_cleaner'
+require "paperclip/matchers"
 
 Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
@@ -51,6 +52,9 @@ Spork.prefork do
     config.after(:each) do
       DatabaseCleaner.clean
     end
+  
+    config.include Paperclip::Shoulda::Matchers
+  
   end
 end
 

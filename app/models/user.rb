@@ -26,7 +26,19 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation
+  attr_accessor   :avatar
   
   has_many :posts
   has_many :topics
+  
+  has_attached_file :avatar, :styles => { :small => "80x80>" },
+                    :url  => "/assets/users/:id/:style/:basename.:extension",
+                    :path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+  
+  
+  #validates_attachment_presence :avatar
+  validates_attachment_content_type :avatar,
+                                    :content_type => ['image/jpeg', 'image/png', 'image/jpeg']
+  
+  
 end

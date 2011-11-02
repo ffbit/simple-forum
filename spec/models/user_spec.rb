@@ -61,4 +61,13 @@ describe User do
   describe "topics association" do
     it { should have_many :topics }
   end
+  
+  describe "avatar" do
+    it { should have_attached_file :avatar }
+    it { should validate_attachment_content_type(:avatar).
+                  allowing('image/png').
+                  allowing('image/gif').
+                  allowing('image/jpeg').
+                  rejecting('text/plain', 'text/xml') }
+  end
 end
