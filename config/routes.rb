@@ -6,10 +6,13 @@ SimpleForum::Application.routes.draw do
   resources :forums, :except => :index
 
   resources :categories, :except => :show
-
-  devise_for :users do
+  
+  devise_for :users, :skip => [:registrations] do
     # registrations
-    get 'signup' => 'devise/registrations#new', :as => :signup
+    get 'signup' => 'devise/registrations#new', :as => :new_user_registration
+    post 'signup' => 'devise/registrations#create', :as => :user_registration
+    get 'users/edit' => 'devise/registrations#edit', :as => :edit_user_registration
+    put 'users' => 'devise/registrations'
     
     # sign up
     get 'signin' => 'devise/sessions#new', :as => :signin

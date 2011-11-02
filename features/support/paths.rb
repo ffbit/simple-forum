@@ -5,7 +5,7 @@ def path_to(page)
     root_path
   
   when /the sign up page/
-    signup_path
+    new_user_registration_path
     
   when /the sign in page/
     signin_path
