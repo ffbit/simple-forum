@@ -7,7 +7,7 @@ SimpleForum::Application.routes.draw do
 
   resources :categories, :except => :show
   
-  devise_for :users, :skip => [:registrations, :sessions] do
+  devise_for :users, :skip => [:registrations, :sessions, :password] do
     # registrations
     get 'signup' => 'devise/registrations#new', :as => :new_user_registration
     post 'signup' => 'devise/registrations#create', :as => :user_registration
