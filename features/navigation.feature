@@ -9,3 +9,4 @@ Feature: Navigation
     Then I should see "Sign up" link
     And I should see "Sign in" link
     And I should see "Home" link
+    And I should not see "Sign out" link

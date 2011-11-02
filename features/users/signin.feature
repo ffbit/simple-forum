@@ -12,6 +12,9 @@ Feature: Sign in
   Scenario: Successful Sing in
     When I sign in
     Then I should see "Signed in successfully."
+    And I should not see "Sign up" link
+    And I should not see "Sign in" link
+    And I should see "Sign out" link
   
   Scenario: Unsuccessful Sing in without an email address
     When I submit the sing in form without "email"
