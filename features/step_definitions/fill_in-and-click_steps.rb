@@ -13,3 +13,8 @@ end
 When /^I click "([^"]*)" link$/ do |locator|
   click_link locator
 end
+
+When /^I attach an "([^"]*)"$/ do |field|
+  attach_file :avatar, File.join(Rails.root, 'spec', 'support', 'happy.jpg')
+end
+
