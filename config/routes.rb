@@ -10,14 +10,17 @@ SimpleForum::Application.routes.draw do
   devise_for :users, :skip => [:registrations, :sessions, :password] do
     # registrations
     get 'signup' => 'devise/registrations#new', :as => :new_user_registration
+    get 'signup' => 'devise/registrations#new', :as => :signup
     post 'signup' => 'devise/registrations#create', :as => :user_registration
     get 'users/edit' => 'devise/registrations#edit', :as => :edit_user_registration
     put 'users' => 'devise/registrations'
     
-    # sign up-out
+    # sign in-out
     get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    get 'signin' => 'devise/sessions#new', :as => :signin
     post 'signin' => 'devise/sessions#create', :as => :user_session
     get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    get 'signout' => 'devise/sessions#destroy', :as => :signout
   end
   
   devise_scope :user do 
