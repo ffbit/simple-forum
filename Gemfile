@@ -17,6 +17,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "will_paginate", "~> 3.0.2"
+gem "paperclip", "~> 2.4.5"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -44,6 +46,5 @@ group :test, :development do
   gem "shoulda-matchers", "~> 1.0.0.beta3"
   gem "rspec-on-rails-matchers", "~> 1.0.0"
   gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
-  gem "will_paginate", "~> 3.0.2"
 end
 

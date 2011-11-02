@@ -12,6 +12,10 @@
 #  admin                  :boolean
 #  created_at             :datetime
 #  updated_at             :datetime
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 
 require 'spec_helper'
@@ -56,5 +60,14 @@ describe User do
   
   describe "topics association" do
     it { should have_many :topics }
+  end
+  
+  describe "avatar" do
+    it { should have_attached_file :avatar }
+    it { should validate_attachment_content_type(:avatar).
+                  allowing('image/png').
+                  allowing('image/gif').
+                  allowing('image/jpeg').
+                  rejecting('text/plain', 'text/xml') }
   end
 end

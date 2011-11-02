@@ -9,3 +9,6 @@ It is just for playing around with Ruby on Rails.
 * topics;
 * posts.
 
+=== Dependencies
+
+    sudo apt-get install imagemagick
