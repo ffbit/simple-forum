@@ -27,7 +27,7 @@ class ForumsController < ApplicationController
   def update
     @forum = Forum.find(params[:id])
 
-    if @forum.save
+    if @forum.update_attributes(params[:forum])
       redirect_to root_path, notice: 'Forum was successfully updated.'
     else
       render :new
