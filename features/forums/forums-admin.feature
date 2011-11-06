@@ -43,6 +43,7 @@ Feature: Manage Forums
     When I fill in "title" field with "Ruby"
     And I click "Update Forum" button
     Then I should be redirected to the home page
+    And I should see "Ruby" "forum" link
     And I should see "Forum was successfully updated."
   
   Scenario: Seeing Delete Forum Link
