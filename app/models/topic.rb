@@ -24,7 +24,7 @@ class Topic < ActiveRecord::Base
   
   default_scope :order => 'topics.updated_at DESC'
   
-  before_save :create_post
+  before_save :create_post, :if => :new_record?
   
   private
     def create_post
